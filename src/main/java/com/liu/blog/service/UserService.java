@@ -10,48 +10,46 @@ public class UserService {
 	public UserService() {
 	}
 	
-	//�Ƿ��Ѵ���
+	//是否已经存在
 	public boolean exists(String userName){
 		User user = getUserByUserName(userName);
 
 		return user != null;
 	}
 	
-	//�û�ע�ᡢ������û�
+	//用户注册、添加新用户
 	public String registerUser(User user){
- //��ע����û����һЩĬ��ֵ�����磺ע���û���ʱ�䡢ע���û��Ĳ����˵�...
-		
+	//给注册的用户添加一些默认值，比如：注册用户的时间、注册用户的操作人等...
 		UserDao dao = new UserDao();
 		
 		String newUser =  dao.addUser(user);
 		
-		//��¼�û�ע�����־
-		
-		//���Ĭ��Ȩ��
+		//记录用户注册的日志
+		//添加默认权限
 		
 		return newUser;
 	}
 	
 	
-	//�û���¼
+	//用户登录
 	public boolean loginVerify(String userName,String password){
 
-		//1.�����û��������û�
+		//1.根据用户名检索用户
 		User user = getUserByUserName(userName);
 		if(user == null){
 			return false;
 		}
 		
-		//2.�Ƚ��û�������
+		//2.比较用户的密码
 		if(! user.getPassword().equals(password)){
 			return false;
 		}
 		
-		//3.����û��Ƿ����
+		//3.检查用户是否禁用
 		
-		//4.����û��Ƿ���Ȩ��
+		//4.检查用户是否有权限
 				
-		//5.��¼��¼��־
+		//5.记录登录日志
 		
 		return true;
 	}
@@ -66,7 +64,7 @@ public class UserService {
 	}
 	
 	
-	//�޸�����
+	//修改密码
 	public String changePassword(String userName,String password,String password1,String password2){
 		
 		UserDao dao = new UserDao();
@@ -84,20 +82,20 @@ public class UserService {
 		
 		return dao.changeUser(user);
 	} 
-	//�Ƿ�Ϊ����Ա
+	//是否为管理员
 	public String checkManager(String userName){
 		UserDao dao = new UserDao();
 		return dao.checkManager(userName);
 	}
 	
 	
-	//�����û�
+	//禁用用户
 	
 	
-	//ɾ���û�
+	//删除用户
 	
 	
-	//��ʾ�û���Ϣ
+	//显示用户信息
 	public User getUserByUserName(String userName){
 
 		UserDao dao = new UserDao();

@@ -7,7 +7,7 @@ import com.liu.blog.entity.Type;
 
 public class TypeService {
 	
-	//ͨ����������������
+	//通过类型名查找类型
 	public Type getTypeByTypeName(String typeName, String userName){
 		TypeDao dao = new TypeDao();
 		return dao.findByTypeName(typeName,userName);
@@ -18,7 +18,7 @@ public class TypeService {
 	}
 	
 	
-	//�ж��Ƿ��Ѿ����ڸ���������
+	//判断是否已经存在改文章类型
 	public boolean exists(String typeName,String userName){
 		
 		Type type = getTypeByTypeName(typeName,userName);
@@ -27,7 +27,7 @@ public class TypeService {
 	}
 	
 	
-	//�����������
+	//添加文章类型
 	public String addType(Type type){
 	
 		TypeDao dao = new TypeDao();
