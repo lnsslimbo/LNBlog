@@ -60,30 +60,30 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("UserName", userName);
 			
-            String msg = "��ӭ����";
+            String msg = "欢迎您！";
 			userName = java.net.URLEncoder.encode(userName,"utf-8");
 			msg = java.net.URLEncoder.encode(msg,"utf-8");
-			
+
 			/*if ("y".equals(flag)) {
-				             //��������Cookie����
-				             Cookie nameCookie = new Cookie("username", name);
-				             //����Cookie����Ч��Ϊ3��
-				             nameCookie.setMaxAge(60 * 60 * 24 * 3);
-				             Cookie pwdCookie = new Cookie("password", pwd);
-				             pwdCookie.setMaxAge(60 * 60 * 24 * 3);
-				             response.addCookie(nameCookie);
-				             response.addCookie(pwdCookie);
-				         }*/
-			
+				 //创建两个Cookie对象
+				 Cookie nameCookie = new Cookie("username", name);
+				 //设置Cookie的有效期为3天
+				 nameCookie.setMaxAge(60 * 60 * 24 * 3);
+				 Cookie pwdCookie = new Cookie("password", pwd);
+				 pwdCookie.setMaxAge(60 * 60 * 24 * 3);
+				 response.addCookie(nameCookie);
+				 response.addCookie(pwdCookie);
+			 }*/
+
 			response.sendRedirect("MainServlet?userName=" + msg + userName);
 		}
 		
 		else{
 			if(password.isEmpty()){
-				request.setAttribute("errorMsg1", "���������룡");
+				request.setAttribute("errorMsg1", "请输入密码！");
 			}
 			if(!userService.loginVerify(userName,password)){
-				request.setAttribute("errorMsg2", "�û��������벻ƥ�䣬���������룡");
+				request.setAttribute("errorMsg2", "用户名和密码不匹配，请重新输入！");
 			}
 			if(userService.checkCondition(userName) != ""){
 				request.setAttribute("errorMsg3", userService.checkCondition(userName));

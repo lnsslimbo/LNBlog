@@ -52,7 +52,7 @@ public class ShowUserServlet extends HttpServlet {
 		
 		if(userService.changeInformation(user) == ""){
 			
-		    request.setAttribute("msg", "????????");
+		    request.setAttribute("msg", "保存成功！");
 		    request.getRequestDispatcher("/userInformation.jsp").forward(request, response);
 		    
 		    }

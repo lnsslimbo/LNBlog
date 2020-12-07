@@ -39,7 +39,7 @@ public class SignServlet extends HttpServlet {
 		Date dt =new Date();
 		DateFormat dFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-		//1.��ȡ������
+		//1.获取表单数据
 		User user = new User();
 		request.setCharacterEncoding("utf-8");
 		user.setUserName(request.getParameter("userName"));
@@ -54,8 +54,8 @@ public class SignServlet extends HttpServlet {
 		user.setInformation(request.getParameter("information"));
 		user.setSignDate(dFormat.format(dt));
 		user.setPosition(request.getParameter("position"));
-		
-		//2.ע���û��������ݱ��浽���ݿ⣬��ʵ��ע��
+
+		//2.注册用户，把数据保存到数据库，来实现注册
 		UserService userService = new UserService();
 		request.setAttribute("user", user);
 		
@@ -63,7 +63,7 @@ public class SignServlet extends HttpServlet {
 		
 		String userName = request.getParameter("userName");
 		if(userService.exists(userName)){
-			request.setAttribute("errorMsg2", "�û��Ѵ��ڣ����������룡");		
+			request.setAttribute("errorMsg2", "用户已存在，请重新输入！");
 			request.getRequestDispatcher("/sign.jsp").forward(request, response);
 			return;
 		}

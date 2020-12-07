@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/liu/blog/dao/ArticleDao.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/liu/blog/servlet/AddArticleServlet.java" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/liu/blog/servlet/AddUserServlet.java" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/liu/blog/servlet/IndexServlet.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/liu/blog/servlet/ShowUserServlet.java" charset="UTF-8" />
   </component>
 </project>

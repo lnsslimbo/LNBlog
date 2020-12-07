@@ -51,14 +51,14 @@ public class ShowArticleServlet extends HttpServlet {
 		String typeName = request.getParameter("typeName");
 		String userName = (String)request.getSession().getAttribute("UserName");
 		if(typeService.getTypeByTypeName(typeName, userName) == null){
-			request.setAttribute("error", "���û�û����Ӹ����ͣ���������������");
+			request.setAttribute("error", "该用户没有添加该类型，请重新输入类型");
 			request.getRequestDispatcher("/articleInformation.jsp").forward(request, response);
 			return;
 		}
 		
 		if(service.changeInformation(article) == ""){
 			
-			request.setAttribute("msg", "����ɹ���");
+			request.setAttribute("msg", "保存成功！");
 			//response.sendRedirect("ArticleInformationServlet");
 			request.getRequestDispatcher("/articleInformation.jsp").forward(request, response);
 		}

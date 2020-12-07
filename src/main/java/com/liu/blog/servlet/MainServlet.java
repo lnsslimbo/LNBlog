@@ -29,7 +29,7 @@ public class MainServlet extends HttpServlet {
 			return;
 		}
 				
-		request.setAttribute("msg", "��ӭ����");
+		request.setAttribute("msg", "欢迎您！");
 		request.setAttribute("userName",userName);
 		
 		request.getRequestDispatcher("/main.jsp").forward(request, response);

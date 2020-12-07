@@ -59,12 +59,13 @@ public class IndexServlet extends HttpServlet {
 		user.setPassword(password);
 		user.setPosition(position);
 		
-		if(userService.loginVerify(userName,password) && (userService.checkCondition(userName)=="") && (userService.checkPosition(userName,position)=="")){
+		if(userService.loginVerify(userName,password) && (userService.checkCondition(userName)=="")
+				&& (userService.checkPosition(userName,position)=="")){
 			HttpSession session = request.getSession();
 			session.setAttribute("UserName", userName);
 			
 			
-			String msg = "��ӭ����";
+			String msg = "欢迎您！";
 			userName = java.net.URLEncoder.encode(userName,"utf-8");
 			msg = java.net.URLEncoder.encode(msg,"utf-8");
 			
@@ -72,10 +73,10 @@ public class IndexServlet extends HttpServlet {
 		}
 		else{
 			if(password.isEmpty()){
-				request.setAttribute("errorMsg1", "���������룡");
+				request.setAttribute("errorMsg1", "请输入密码！");
 			}
 			if(!userService.loginVerify(userName,password)){
-				request.setAttribute("errorMsg2", "�û��������벻ƥ�䣬���������룡");
+				request.setAttribute("errorMsg2", "用户名或密码输入错误，请重新输入！");
 			}
 			if(userService.checkCondition(userName) != ""){
 				request.setAttribute("errorMsg3", userService.checkCondition(userName));
