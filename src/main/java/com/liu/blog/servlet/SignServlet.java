@@ -17,9 +17,6 @@ import com.liu.blog.service.UserService;
 @WebServlet("/SignServlet")
 public class SignServlet extends HttpServlet {
 
-	/**
-	 * Constructor of the object.
-	 */
 	public SignServlet() {
 		super();
 	}
@@ -58,9 +55,7 @@ public class SignServlet extends HttpServlet {
 		//2.注册用户，把数据保存到数据库，来实现注册
 		UserService userService = new UserService();
 		request.setAttribute("user", user);
-		
-		//${user.userName}
-		
+
 		String userName = request.getParameter("userName");
 		if(userService.exists(userName)){
 			request.setAttribute("errorMsg2", "用户已存在，请重新输入！");
