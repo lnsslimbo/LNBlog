@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
        用户：${userName}，您已退出！ <br>
        
-       <%@ include file="footer.jsp" %>
+       <%@ include file="layout/footer.jsp" %>
        
   </body>
 </html>

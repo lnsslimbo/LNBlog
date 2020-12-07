@@ -82,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="html/js/bootstrap.min.js"></script>
     
     
-    <%@ include file="header.jsp" %>
+    <%@ include file="layout/header.jsp" %>
 
 
 
@@ -247,7 +247,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	</div>
 
-	<%@ include file="footer.jsp" %>
+	<%@ include file="layout/footer.jsp" %>
 	
   </body>
 </html>

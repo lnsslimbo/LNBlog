@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" import="com.zhw.entity.Comment" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" import="com.liu.blog.entity.Comment" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -108,6 +108,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 		  </div>
 	</div>
-	<%@ include file="footer.jsp" %>
+	<%@ include file="layout/footer.jsp" %>
 	</body>
 </html>

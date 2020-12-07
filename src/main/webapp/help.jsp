@@ -26,6 +26,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <%@ include file="footer.jsp" %>
+    <%@ include file="layout/footer.jsp" %>
   </body>
 </html>

@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <a href="ArticleServlet"><button>确定</button></a>
       </div> 
    
-      <%@ include file="footer.jsp" %>
+      <%@ include file="layout/footer.jsp" %>
       
   </body>
 </html>

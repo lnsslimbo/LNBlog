@@ -53,6 +53,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</form>
 	</div>
 	
-	<%@ include file="footer.jsp" %>
+	<%@ include file="layout/footer.jsp" %>
   </body>
 </html>

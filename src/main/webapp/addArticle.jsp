@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" import="com.zhw.entity.Type" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" import="com.liu.blog.entity.Type" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <a href="AddTypeServlet" class="btn btn-primary">添加文章类型</a>
     </form>
     
-    <%@ include file="footer.jsp" %>
+    <%@ include file="layout/footer.jsp" %>
     
   </body>
 </html>

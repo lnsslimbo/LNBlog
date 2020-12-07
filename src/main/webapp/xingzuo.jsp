@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="html/js/bootstrap.min.js"></script>
     
-    <%@ include file="header.jsp" %>
+    <%@ include file="layout/header.jsp" %>
 
 
 
@@ -245,7 +245,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 	</div>
 
-	<%@ include file="footer.jsp" %>
+	<%@ include file="layout/footer.jsp" %>
 	
   </body>
 </html>

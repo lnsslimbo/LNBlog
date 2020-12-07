@@ -132,7 +132,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	
 
-    <%@ include file="footer.jsp" %>
+    <%@ include file="layout/footer.jsp" %>
 	</form>
   </body>
   </body>

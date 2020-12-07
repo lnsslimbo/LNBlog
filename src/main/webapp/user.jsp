@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" import="com.zhw.entity.User" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" import="com.liu.blog.entity.User" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%
 String path = request.getContextPath();
@@ -157,7 +157,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</tr>
     </table>
     
-    <%@ include file="footer.jsp" %>
+    <%@ include file="layout/footer.jsp" %>
     
 
   </body>
