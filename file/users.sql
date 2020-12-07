@@ -1,0 +1,65 @@
+USE [Test]
+GO
+
+/****** Object:  Table [dbo].[users]    Script Date: 2020/12/7 12:50:28 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[users](
+	[userID] [int] IDENTITY(1,1) NOT NULL,
+	[userName] [nvarchar](200) NOT NULL,
+	[password] [nvarchar](200) NOT NULL,
+	[fullName] [nvarchar](200) NULL,
+	[gender] [nvarchar](200) NULL,
+	[birthDate] [nvarchar](200) NULL,
+	[tel] [nvarchar](200) NULL,
+	[email] [nvarchar](200) NULL,
+	[weChat] [nvarchar](200) NULL,
+	[condition] [nvarchar](200) NULL,
+	[information] [nvarchar](200) NULL,
+	[signDate] [date] NOT NULL,
+	[position] [nvarchar](200) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[userID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[weChat] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[userName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[password] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[tel] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[users] ADD  DEFAULT ('启用') FOR [condition]
+GO
+
+ALTER TABLE [dbo].[users]  WITH CHECK ADD CHECK  (([condition]='禁用' OR [condition]='启用'))
+GO
+
+ALTER TABLE [dbo].[users]  WITH CHECK ADD CHECK  (([gender]='女' OR [gender]='男'))
+GO
+
+ALTER TABLE [dbo].[users]  WITH CHECK ADD CHECK  (([position]='管理员' OR [position]='普通用户'))
+GO
+
+

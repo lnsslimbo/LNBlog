@@ -1,0 +1,104 @@
+<%@ page language="java" import="java.util.*" import="com.zhw.entity.Comment" pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'article2.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	<link href="html/css/bootstrap.min.css" rel="stylesheet">
+	
+	<style>
+		table {border:0px;
+		         margin:0;
+				 width:80%;
+				 }
+		body {margin:0px 150px}
+		
+		.table > tbody > tr > td{
+             border: white 0px solid;
+             padding: 3px 3px;}
+		
+		#footer{text-align:center;}
+    </style>
+
+  </head>
+  
+  <body>
+    <script src="html/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	   
+	</script>
+
+    <script src="html/jquery.min.js" type="text/javascript"></script>
+    <script src="html/js/bootstrap.min.js"></script>
+    
+    <div id="head" class="text-center">
+		<h1>选择</h1> 
+		文章类型：教育 &emsp;&emsp;&emsp;发表日期：2018-09-19 &emsp;&emsp;&emsp;
+		<span class="glyphicon glyphicon-thumbs-up"></span>点赞：698 &emsp;&emsp;&emsp;
+		<span class="glyphicon glyphicon-share"></span>转发：20 &emsp;&emsp;&emsp;作者：逸尘幻雪
+	</div><br>
+
+	<div id="container">
+	    <div id="content">
+&emsp;&emsp;&emsp;人，活着，一生有太多的选择，谁也猜不透每一个选择会给自己带来怎样的结果，只是在每一个选择之前，我们都知道接下来的路就是自己刚刚所做的决定，需要自己去面对。人生很长，也很短，眨眼我们就已经背负起了该背负着的义务和责任，选择似乎已经不再是我们的特权。命运，没有定数，相信了，就当真了，不信，或许就是一个安慰自己的谎言。<br>
+　　 小时候，天真的笑容，稚嫩的眼神，那或许就是我们一生中最怀念、最美记忆的一种感觉。那时候，我们不知道什么是真正的选择，也没有想过要去选择，碰见自己喜欢的东西，只是一个劲的要，也没有所谓的不喜欢做的事情，更加不用想明天我们该做什么，该处理什么事，该怎样赚钱……儿时的天真，快乐的童年，总是那么转瞬即逝，也许很多人都一直在想，如果时光能倒流就好了，那样的话我一定要选择怎么怎么过自己的生活，只是生活从来都没有倒带，从来都没有剧本，主角是自己，不像演戏，没演好就重来。长大后，才发现生活不像我们想象的那样的简单，我们时刻面临着不同的选择，学习、工作、家庭……我们总是小心翼翼，在每一条路上，我们总是想追求最好的，努力付出过后，结局如何，只有我们自己慢慢去体会。当我们渐渐步入社会，为了生活，我们不得不努力工作，严格遵守公司的规章制度，不敢有一丝懈怠，甚至为了一份微薄的薪水，我们几乎耗尽了所有的时间和精力去做好，不是在上班，就是在去上班的路上，几乎没有自己所谓的自由时间，我想在当今社会，应该有很大一部分人是这样，没有时间交际，也没有时间旅游，更没有时间去陪伴家人……或许这就是所谓的生活的选择，到最后只能自己在心里安慰自己：有失有得，只是这个得真是我们自己所想要的吗？<br>
+　　 人，活着其实很累，在公司，上有可能需要讨好领导，下还需要和同事打好关系，回家需要处理好家庭的关系，交际需要维护好朋友自己的友谊，一不小心就有可能会各种质疑的话语，让我们心里、身体上背负着更重的压力。也许经常有这样的场景，喧嚣的闹市，聚会上，热闹非凡，尽情的喝着酒，各种嘈杂，殊不知在心里巴不得这聚会早点结束就好，想着明天还要早起上班，想着家里的妻儿还在幽幽的盼着，而你自己也根本就不喜欢这样的场合，偶尔还可以，时间长了，你已经不知该怎样去选择。年纪越大，时间越来越少，身体越来越没以前那么能抗，而自己明白的事情却越来越迷茫，入夜时分，站在这个城市的中央，越来越觉得生活的选择已经不由的我们自己来做主，只剩下了莫名的伤感。时光在飞逝，父母容颜渐渐沧桑，望着父母佝偻的背影，心里一阵阵莫名的心酸。年轻时不努力拼搏，老了就自己受苦，这是现在年轻人经常激励自己的话，为了所谓的以后，我们牺牲了自己最美好的年华，却没有谁知道以后的样子又会是如何，也许这就是所谓的选择。我们每个人都有很多在选择，学业、事业、爱情……我们都有各种各样的选择，可以说生活中我们时刻面临着选择，选择不一样，结局也会不一样，只是你的选择是否真正发自内心还是出自于生活的无奈，已经无人理会。人生路需要走很久，我们总会遇到各种各样的人，各种各样的事，正如我们工作平台选择不一样，起点也会不一样，领导选择不一样，或许你的结局也会不一样，我们不能选择自己的出生，所以不要怨天尤人，更不要去指责，生活对谁都一样，选择永远在你手中，跟着心走，或许你就能找到一个真正的自己。<br>
+　　 大自然给予了我们很多美好的东西，只是我们自己却不知道去好好珍惜，只有当我们在失去后或者犯错了，我们才会去说后悔没有珍惜，希望能给一次机会重新来过，只是这样的重来真的还能重来吗？我们谁都不能去肯定，路，自己选择，自己走下去，也许有人给你使绊，也许有人会拉你一把，但终归还是需要自己去选择，自己亲自去走。人生经历太多，失败了、跌倒了，可以站起来继续走，如果走错了，可以选择正确的路，但我们如果放弃了，就有可能一直停留在那，多年以后，或许你已经被遗忘。<br>
+　　 风景在路上，我们需要去寻找，才能找到真正的自己，谁都有无奈，谁都有生活的压力，只是你们的选择不一样，当你走上自己的路，或许你会觉得轻松，或许你会觉得很难，但那终归是属于自己的路，因为生活，始终在你手中。<br>
+        </div>
+
+		<div id="comment">
+			<h3>评论&emsp;</h3>
+			<div>
+			    <table id="table1" class="table">
+			        <%
+			            List<Comment> list = (List<Comment>)request.getAttribute("list");
+			            for(Comment comment : list){
+			         %>
+			        <tr>
+			            <td style="font-size:20px;"><%=comment.getUserName() %></td>
+			        </tr>
+			        
+			        <tr ><td><%=comment.getContent() %></td></tr>
+			        
+			        <tr class="text-muted">
+			            <td><%=comment.getCommentDate() %></td>
+			            <td>
+			                <a href="#"><span class="glyphicon glyphicon-share"></span></a>&emsp;&emsp;&emsp;
+					    	<a href="#"><span class="glyphicon glyphicon-comment"></span></a>&emsp;&emsp;&emsp;
+					    	<a href="#"><span class="glyphicon glyphicon-thumbs-up"></span>22</a>
+			            </td>
+			        </tr>
+
+			        <%} %>
+			        
+			        
+				    </table>
+				    <form action="ArticleServlet2" method="post">
+				    <h3>发表评论</h3>
+				        <input type="text" name="content" value="${comment.content }" style="line-height:50px;width:600px;"><br><br>
+				        <button type="submit" class="btn btn-info">发表</button>
+				        &emsp;<a href="MainServlet" class="btn btn-info">返回</a><br>
+				        <span style="color:red;">${msg }</span>
+				    </form>
+				</div>
+		  </div>
+	</div>
+	<%@ include file="footer.jsp" %>
+  </body>
+</html>
