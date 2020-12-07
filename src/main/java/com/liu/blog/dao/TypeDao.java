@@ -40,7 +40,7 @@ public class TypeDao {
 					return success;
 				}
 			}else{
-				success += "�������Ͳ���Ϊ�գ����������룡";
+				success += "文章类型不能为空，请重新输入！";
 			}	
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -50,16 +50,16 @@ public class UserDao {
 			}
 		}else{
 			if(user.getUserName().length()<3){
-				success = success+ "�û�������Ӧ����3~12֮�䣡";
+				success = success+ "用户名长度应该在3~12之间！";
 			}
 			if(user.getPassword1().length()<=8 || user.getPassword2().length()<=8){
-				success = success+ "���볤��Ӧ�ô���8��";
+				success = success+ "密码长度应该大于8！";
 			}
 			if(! user.getPassword1().equals(user.getPassword2())){
-				success = success+"�������벻��ȣ�";
+				success = success+"两次密码不相等！";
 			}
-			if(user.getGender() != "��" || user.getGender() != "Ů" || user.getGender() == ""){
-				success = success+"�������Ա��л�Ů��";
+			if(user.getGender() != "男" || user.getGender() != "女" || user.getGender() == ""){
+				success = success+"请输入性别：男或女！";
 			}
 		}
 		} catch (SQLException e) {
@@ -130,13 +130,13 @@ public class UserDao {
 			
 			rs = st.executeQuery();
 			if(rs.next()){
-				if(rs.getString("Condition").equals("����")){
+				if(rs.getString("Condition").equals("启用")){
 					success = "";
 					return success;
 				}
 				else{
 					//System.out.println(1);
-					success += "���û������ã����ܵ�¼��";
+					success += "该用户被禁用，不能登录！";
 					return success;
 				}
 			}
@@ -172,7 +172,7 @@ public class UserDao {
 				}
 				else{
 					//System.out.println(1);
-					success += "���û�����" + position + "��������ѡ���ɫ��";
+					success += "该用户不是" + position + "，请重新选择角色！";
 					return success;
 				}
 			}
@@ -202,13 +202,13 @@ public class UserDao {
 			
 			rs = st.executeQuery();
 			if(rs.next()){
-				if(rs.getString("Position").equals("����Ա")){
+				if(rs.getString("Position").equals("管理员")){
 					success = "";
 					return success;
 				}
 				else{
 					//System.out.println(1);
-					success += "���û����ǹ���Ա��û��Ȩ�ޣ�";
+					success += "该用户不是管理员，没有权限！";
 					return success;
 				}
 			}
@@ -225,7 +225,7 @@ public class UserDao {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 		DbObject db = new DbObject();
-		String success = "ԭ��������������������룡";
+		String success = "原密码输入错误，请重新输入！";
 		
 		try {
 			
@@ -268,10 +268,10 @@ public class UserDao {
 				}
 			}else{
 				if(password1.length()<=8 || password2.length()<8){
-					success += "���볤��Ӧ�ô���8��";
+					success += "密码长度应大于8！";
 				}
 				if(!password1.equals(password2)){
-					success += "�������벻��ȣ����������룡";
+					success += "两次密码不相等，请重新输入！";
 				}
 			}
 		} catch (SQLException e) {
@@ -293,8 +293,10 @@ public class UserDao {
 			
 			cn = db.open();
 			
-		    if(user.getTel().length() == 11 && (user.getGender().equals("Ů") || user.getGender().equals("��")) && user.getCondition().equals("����") || user.getCondition().equals("����")){
-			    String sql = "update Users set FullName = ?,Gender = ?,BirthDate = ?,Tel = ?,Email = ?,WeChat = ?,Condition = ?,Position = ?,Information = ? where UserName = ?;";
+		    if(user.getTel().length() == 11 && (user.getGender().equals("女") || user.getGender().equals("男")) &&
+					user.getCondition().equals("启用") || user.getCondition().equals("禁用")){ String sql =
+					"update Users set FullName = ?,Gender = ?,BirthDate = ?,Tel = ?,Email = ?,WeChat = ?," +
+							"Condition = ?,Position = ?,Information = ? where UserName = ?;";
 			    System.out.println(sql);
 			    st = cn.prepareStatement(sql);
 			    st.setString(1, user.getFullName());
@@ -306,7 +308,7 @@ public class UserDao {
 			    st.setString(7, user.getCondition());
 			    st.setString(8, user.getPosition());
 			    st.setString(9, user.getInformation());
-			    st.setString(10, user.getUserName());
+			    st.setString(10,user.getUserName());
 			    
 			    
 			    int ret = st.executeUpdate();
@@ -315,12 +317,12 @@ public class UserDao {
 			    }
 		    }else{
 			    	if(user.getTel().length()!=11){
-			    		success += "�ֻ���Ӧ��Ϊ11λ��";
+			    		success += "手机号应为11号";
 			    	    }
-			    	if(!user.getCondition().equals("����") && !user.getCondition().equals("����")){
-			    		success += "״̬Ӧ��Ϊ�����á��򡮽��á���";
-			    	}if(!user.getGender().equals("Ů") && !user.getGender().equals("��")){
-			    		success += "�Ա�Ӧ��Ϊ���С���Ů����";
+			    	if(!user.getCondition().equals("启用") && !user.getCondition().equals("禁用")){
+			    		success += "状态应该为“启用”或”禁用”";
+			    	}if(!user.getGender().equals("女") && !user.getGender().equals("男")){
+			    		success += "性别应为“男”或”女";
 			    	    }
 			        }
 		    }catch (SQLException e) {
@@ -443,7 +445,7 @@ public class UserDao {
 			System.out.println(sql);
 		
 			st = cn.prepareStatement(sql);
-			st.setString(1, "����");
+			st.setString(1, "启用");
 			st.setString(2, userName);
 			
 			int ret = st.executeUpdate();
@@ -473,7 +475,7 @@ public class UserDao {
 			System.out.println(sql);
 		
 			st = cn.prepareStatement(sql);
-			st.setString(1, "����");
+			st.setString(1, "禁用");
 			st.setString(2, userName);
 			
 			int ret = st.executeUpdate();

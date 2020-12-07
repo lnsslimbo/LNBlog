@@ -71,11 +71,11 @@ public class CommentDao {
 			
 			    int ret = st.executeUpdate();
 			    if(ret>0){
-			    	success = success + "����ɹ���";
+			    	success = success + "发表成功！";
 					System.out.println(success);
 			    }
 			}else{
-				success = success + "���ݳ���Ӧ�ô��ڵ����������������룡";
+				success = success + "内容长度应该大于等于三，请重新输入！";
 				System.out.println(success);
 			}
 		} catch (SQLException e) {

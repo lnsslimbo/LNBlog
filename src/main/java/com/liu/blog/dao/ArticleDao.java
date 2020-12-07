@@ -74,7 +74,7 @@ public class ArticleDao {
 					return success;
 				}
 			}else{
-				success += "???????????????????????????????????";
+				success += "文章题目、文章内容以及文章类型不能为空";
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -307,7 +307,7 @@ public class ArticleDao {
 			System.out.println(sql);
 		
 			st = cn.prepareStatement(sql);
-			st.setString(1, "????");
+			st.setString(1, "启用");
 			st.setInt(2, articleID);
 			
 			int ret = st.executeUpdate();
@@ -333,7 +333,7 @@ public class ArticleDao {
 			System.out.println(sql);
 		
 			st = cn.prepareStatement(sql);
-			st.setString(1,"????");
+			st.setString(1,"禁用");
 			st.setInt(2, articleID);
 			
 			int ret = st.executeUpdate();
