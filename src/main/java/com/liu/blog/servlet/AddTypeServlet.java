@@ -37,15 +37,15 @@ public class AddTypeServlet extends HttpServlet {
 		String userName = (String)request.getSession().getAttribute("UserName");
 		request.setAttribute("typeName", typeName);
 		if(typeService.exists(typeName,userName)){
-			request.setAttribute("error2", "���������Ѵ��ڣ����������룡");
+			request.setAttribute("error2", "文章类型已存在，请重新输入！");
 			request.getRequestDispatcher("/addType.jsp").forward(request, response);
 			return;
 		}
 		request.setAttribute("type", type);
 		if(typeService.addType(type) == ""){
 			
-			request.setAttribute("msg3", "�������ͣ�");
-			request.setAttribute("msg4", "��ӳɹ���");
+			request.setAttribute("msg3", "文章类型：");
+			request.setAttribute("msg4", "添加成功！");
 			request.getRequestDispatcher("/addType.jsp").forward(request, response);
 			
 		}else{

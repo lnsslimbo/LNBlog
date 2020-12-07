@@ -51,7 +51,7 @@ public class AddArticleServlet extends HttpServlet {
 		ArticleService articleService = new ArticleService();
 		TypeService typeService = new TypeService();
 		if(typeService.findAllByUserName(userName) == null || typeService.findAllByUserName(userName).isEmpty()){
-			request.setAttribute("error3", "�������Ͳ���Ϊ�գ���������������ͣ�");
+			request.setAttribute("error3", "文章类型不能为空，请先添加文章类型！");
 			request.setAttribute("list", typeService.findAllByUserName(userName));
 			request.getRequestDispatcher("/addArticle.jsp").forward(request, response);
 			return;
@@ -59,13 +59,13 @@ public class AddArticleServlet extends HttpServlet {
 		
 		String content = request.getParameter("content");
 		if(articleService.exists(content)){
-			request.setAttribute("error2", "���������Ѵ��ڣ����������룡");
+			request.setAttribute("error2", "文章内容已存在，请重新输入！");
 			request.getRequestDispatcher("/addArticle.jsp").forward(request, response);
 			return;
 		}
 		if(articleService.addArticle(article) == ""){
-			request.setAttribute("msg1", "���£�");
-			request.setAttribute("msg2", "��ӳɹ���");
+			request.setAttribute("msg1", "文章");
+			request.setAttribute("msg2", "添加成功");
 			request.getRequestDispatcher("/newArticle.jsp").forward(request, response);
 		}else{
 			request.setAttribute("error1", articleService.addArticle(article));

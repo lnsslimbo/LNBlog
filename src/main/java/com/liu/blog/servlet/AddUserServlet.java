@@ -55,15 +55,15 @@ public class AddUserServlet extends HttpServlet {
 				
 				String userName = request.getParameter("userName");
 				if(userService.exists(userName)){
-					request.setAttribute("errorMsg2", "�û��Ѵ��ڣ����������룡");		
+					request.setAttribute("errorMsg2", "用户名已存在，请重新输入！");
 					request.getRequestDispatcher("/addUser.jsp").forward(request, response);
 					return;
 				}
 
 		        if(userService.registerUser(user) == ""){
 					
-		        	request.setAttribute("msg1", "�û�");
-		        	request.setAttribute("msg2", "��ӳɹ���");
+		        	request.setAttribute("msg1", "用户");
+		        	request.setAttribute("msg2", "添加成功！");
 		        	request.getRequestDispatcher("/newUser.jsp").forward(request, response);
 				}
 				else{

@@ -21,7 +21,7 @@ public class ArticleServlet5 extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String title = "ǧ�����Ϊͼ���ݶ�������ǰ��";
+		String title = "千万别因为图安逸而耽误了前程";
 		
 		CommentService service = new CommentService();
 		List<Comment> list = service.findAllByTitle(title);
@@ -40,12 +40,12 @@ public class ArticleServlet5 extends HttpServlet {
 		
 		Comment comment = new Comment();
 		request.setCharacterEncoding("utf-8");
-		comment.setTitle("ǧ�����Ϊͼ���ݶ�������ǰ��");
+		comment.setTitle("千万别因为图安逸而耽误了前程");
 		comment.setContent(request.getParameter("content"));
 		comment.setUserName((String)request.getSession().getAttribute("UserName"));
 		comment.setCommentDate(dFormat.format(dt));
 		
-        String title = "ǧ�����Ϊͼ���ݶ�������ǰ��";
+        String title = "千万别因为图安逸而耽误了前程";
 		
 		CommentService service = new CommentService();
 		String msg = service.addComment(comment);
